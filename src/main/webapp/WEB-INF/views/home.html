@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>MotorBike</h1>
+<table border="1">
+    <tr>
+        <th>Number</th>
+        <th>Name</th>
+        <th>Description</th>
+    </tr>
+    <th:block th:each="motorBike,iStart : ${motorBikes}">
+        <tr>
+            <td th:text="${iStart.index+1}"></td>
+            <td th:text="${motorBike.name}"></td>
+            <td th:text="${motorBike.description}"></td>
+        </tr>
+    </th:block>
+</table>
+</body>
+</html>
