@@ -8,7 +8,7 @@ public class MotorBike {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Integer id;
     private String name;
     private String description;
     private String image;
@@ -22,7 +22,7 @@ public class MotorBike {
         this.description = description;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 

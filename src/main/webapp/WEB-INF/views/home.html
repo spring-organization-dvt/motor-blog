@@ -2,21 +2,36 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Post</title>
 </head>
 <body>
-<h1>MotorBike</h1>
+<h1>Post</h1>
+<a href="/create-motorbike">Create new MotorBike</a>
+<br/>
+<!--<th:block th:each="motorBike: ${motorBikes}">-->
+    <!--<a th:href="@{/edit-motorbike/__${motorBike.getId()}__}" th:text="${motorBike.getName()}"></a>-->
+    <!--<br/>-->
+<!--</th:block>-->
 <table border="1">
     <tr>
         <th>Number</th>
         <th>Name</th>
-        <th>Description</th>
+        <!--<th>Description</th>-->
+        <!--<th>Image</th>-->
+        <th>Edit</th>
+        <th>Delete</th>
+        <!--<th>Detail</th>-->
     </tr>
     <th:block th:each="motorBike,iStart : ${motorBikes}">
         <tr>
             <td th:text="${iStart.index+1}"></td>
-            <td th:text="${motorBike.name}"></td>
-            <td th:text="${motorBike.description}"></td>
+            <!--<td th:text="${motorBike.getId()}"></td>-->
+            <td>
+                <a th:href="@{/detail-motorbike/__${motorBike.getId()}__}" th:text="${motorBike.getName()}"></a>
+            </td>
+            <td><a th:href="@{/update-motorbike/__${motorBike.getId()}__}">Edit</a></td>
+            <td><a th:href="@{/delete-motorbike/__${motorBike.getId()}__}">Delete</a></td>
+            <!--<td th:text="${motorBike.description}"></td>-->
         </tr>
     </th:block>
 </table>

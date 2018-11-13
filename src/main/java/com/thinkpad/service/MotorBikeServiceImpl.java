@@ -16,4 +16,18 @@ public class MotorBikeServiceImpl implements MotorBikeService {
         return motorBikeRepository.findAll();
     }
 
+    @Override
+    public MotorBike findById(Integer id) {
+        return motorBikeRepository.findById(id);
+    }
+
+    @Override
+    public void save(MotorBike motorBike) {
+        motorBikeRepository.save(motorBike);
+    }
+
+    @Override
+    public void remove(Integer id) {
+        motorBikeRepository.remove(id);
+    }
 }
